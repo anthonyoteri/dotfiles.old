@@ -1,3 +1,4 @@
-set GPG_TTY (tty)
+set -gx GPG_TTY (tty)
 
+alias vim=/usr/bin/nvim
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
