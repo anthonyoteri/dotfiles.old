@@ -2,3 +2,11 @@ set -gx GPG_TTY (tty)
 
 alias vim=/usr/bin/nvim
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+set -x MONOREPO_ROOT ~/workspace/monorepo
+set -x AWS_PROFILE streampilot-dev
+set -x ENVIRONMENT dev
+set -x CLUSTER_NAME orc-dev-a
+set -x NAMESPACE anthony
+set -x PUBLIC_URL http://localhost:8080/
+set -x REACT_APP_BASE_URL http://localhost:8000/a1/v1
