@@ -1,1 +1,24 @@
+# Dotfiles bare repository
 .cfg
+
+# Fish
+.config/fish/fish_variables
+
+# Kitty
+.config/kitty/cached.json
+
+# Misc
+*.local
+
+# Vim
+.vim/.netrwhist
+.vim/backup/
+.vim/pack/
+.vim/spell/
+.vim/swap/
+.vim/tags/
+.vim/undo/
+
+# Zsh
+.config/zsh/cache/
+.zsh_history
