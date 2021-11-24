@@ -1,111 +1,103 @@
 [user]
-    name = Anthony Oteri
-    email = anthony.oteri@edgeware.tv
-    signingkey = D06EC44188FCFE5F
+	name = Anthony Oteri
+	email = anthony.oteri@edgeware.tv
+	signingkey = D06EC44188FCFE5F
 
 [color]
-    ui = true
-    status = auto
+	ui = true
+	status = auto
 
 [color "branch"]
-    current = green bold
-    local = green
-    remote = yellow
+	current = green bold
+	local = green
+	remote = yellow
 
 [color "diff"]
-
-    frag = magenta
-    meta = yellow
-    new = green
-    old = red
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 
 [color "status"]
+	added = green reverse
+	changed = yellow reverse
+	untracked = red reverse
 
-    added = green reverse
-    changed = yellow reverse
-    untracked = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 
 [diff]
-
-    algorithm = patience
+	algorithm = patience
 
 [diff "bin"]
-
-    textconv = hexdump -v -C
+	textconv = hexdump -v -C
 
 [core]
-
-    editor = /usr/bin/vim
-    abbrev = 12
-    attributesfile = ~/.gitattributes
-    autocrlf = input
-    excludesfile = ~/.gitignore
-    pager = less -X
+	autocrlf = input
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [pretty]
-
-    custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
-    #                     │        │            │            │             └─ author name
-    #                     │        │            │            └─ message
-    #                     │        │            └─ date (relative)
-    #                     │        └─ decorations (branch, heads or tags)
-    #                     └─ hash (abbreviated)
+	custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
+	#                     │        │            │            │             └─ author name
+	#                     │        │            │            └─ message
+	#                     │        │            └─ date (relative)
+	#                     │        └─ decorations (branch, heads or tags)
+	#                     └─ hash (abbreviated)
 
 [push]
-
-    default = simple
-    followTags = true
-
-[init]
-
-    templatedir = ~/.git_template
-
-[merge]
-
-    renamelimit = 2415
+	default = current
+	followTags = true
 
 [alias]
-    a = commit --amend --no-edit
-    br = branch
-    c = commit
-    ca = !git add -A && git commit
-    cl = clean -ffdx
-    co = checkout
-    cp = cherry-pick
-    d = diff
-    dc = diff --cached
-    f = fetch --prune --tags
-    g = log --graph --pretty=custom
-    l = log --pretty=custom
-    lc = shortlog --summary --numbered
-    pf = push -f
-    r = rebase
-    ri = rebase -i
-    rlc = reset --hard HEAD~1
-    s = status
-    ulc = reset --soft HEAD~1
+	a = commit --amend --no-edit
+	br = branch
+	c = commit
+	ca = !git add -A && git commit
+	cl = clean -ffdx
+	co = checkout
+	cp = cherry-pick
+	d = diff
+	dc = diff --cached
+	f = fetch --prune --tags
+	g = log --graph --pretty=custom
+	l = log --pretty=custom
+	lc = shortlog --summary --numbered
+	pf = push -f
+	r = rebase
+	ri = rebase -i
+	rlc = reset --hard HEAD~1
+	s = status --short --branch
+	ulc = reset --soft HEAD~1
 
-[mergetool]
-	keepTemporaries = false
-	prompt = false
-	keepBackup = false
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
 
-[difftool]
-	prompt = false
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	required = true
 	clean = git-lfs clean -- %f
-[rerere]
-	enabled = true
+	process = git-lfs filter-process
+
 [pull]
-	rebase = true
-[pager]
-	branch = false
+	autosetupmerge = true
+	autosetuprebase = true
+
 [commit]
 	gpgsign = true
+
 [gpg]
 	program = gpg2
+
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
+# vim: set commentstring=#\ %s:
