@@ -73,8 +73,7 @@
 	r = rebase
 	ri = rebase -i
 	rlc = reset --hard HEAD~1
-	s = status --short --branch
-	st = status
+	s = status
 	ulc = reset --soft HEAD~1
 
 [filter "media"]
