@@ -36,7 +36,7 @@
 	lt = log --topo-order
 
 	o = checkout
-	ob = checkout --branch
+	ob = checkout -b
 
     p = push
 	pf = push --force 
