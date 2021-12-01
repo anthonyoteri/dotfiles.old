@@ -1,103 +1,115 @@
-[user]
-	name = Anthony Oteri
-	email = anthony.oteri@edgeware.tv
-	signingkey = D06EC44188FCFE5F
+[alias]
+	a = add
+	aa = add --all
+	ap = add --patch
+	au = add --update
+
+	b = branch
+	ba = branch --all
+	bd = branch --delete
+	bD = branch --delete --force
+	bm = branch --move
+	bM = branch --move --force
+
+	c = commit
+	ca = commit --amend
+	ci = commit --interactive
+	cm = commit --message
+	cv = commit --verbose
+
+	d = diff
+	dc = diff --cached
+	ds = diff --staged
+	dw = diff --word-diff
+
+    l = log
+	lg = log --graph
+	lk = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset'
+	lo = log --oneline
+	lp = log --patch
+	lt = log --topo-order
+
+	o = checkout
+	ob = checkout --branch
+
+    p = push
+	pf = push --force 
+
+    r = rebase
+	ri = rebase --interactive
+	
+	s = status --short --branch
+
+	branch-list-merged = "!git branch --merged master | grep -v -E '(origin|master)'"
+	branch-delete-merged = "!git branch-list-merged | xargs git branch --delete"
+
+	unstage = reset HEAD
+	undo-commit = reset --soft HEAD^
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 
 [color]
-	ui = true
+	ui = auto
 	status = auto
 
-[color "branch"]
-	current = green bold
-	local = green
-	remote = yellow
-
-[color "diff"]
-	meta = yellow bold
-	commit = green bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-
-[color "status"]
-	added = green reverse
-	changed = yellow reverse
-	untracked = red reverse
-
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-
-[diff]
-	algorithm = patience
-
-[diff "bin"]
-	textconv = hexdump -v -C
+[commit]
+	gpgsign = true
 
 [core]
+	editor = nvim
 	autocrlf = input
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 
-[pretty]
-	custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
-	#                     │        │            │            │             └─ author name
-	#                     │        │            │            └─ message
-	#                     │        │            └─ date (relative)
-	#                     │        └─ decorations (branch, heads or tags)
-	#                     └─ hash (abbreviated)
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
 
-[push]
-	default = current
-	followTags = true
+[delta]
+	line-numbers = true
+	syntax-theme = Dracula
+	plus-style = "syntax #2A363B"
+	plus-emph-style = "syntax #2D4E45"
+	minus-style = "syntax #3B2C37"
+	minux-emph-style = "syntax #613038"
 
-[alias]
-	a = commit --amend --no-edit
-	br = branch
-	c = commit
-	ca = !git add -A && git commit
-	cl = clean -ffdx
-	co = checkout
-	cp = cherry-pick
-	d = diff
-	dc = diff --cached
-	f = fetch --prune --tags
-	g = log --graph --pretty=custom
-	l = log --pretty=custom
-	lc = shortlog --summary --numbered
-	pf = push -f
-	r = rebase
-	ri = rebase -i
-	rlc = reset --hard HEAD~1
-	s = status
-	ulc = reset --soft HEAD~1
+[diff]
+	tool = vimdiff
 
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+[fetch]
+	prune = true
 
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	required = true
-	clean = git-lfs clean -- %f
-	process = git-lfs filter-process
+[gpg]
+	program = gpg2
+
+[help]
+	autocorrect = 10
+
+[include]
+	path = ~/.gitconfig.local
+
+[init]
+	defaultBranch = master
+
+[interactive]
+	diffFilter = delta --color-only
+
+[merge]
+	conflictstyle = diff3
 
 [pull]
 	autosetupmerge = true
 	autosetuprebase = true
 
-[commit]
-	gpgsign = true
+[push]
+	default = current
 
-[gpg]
-	program = gpg2
+[rerere]
+	enabled = true
 
-[credential "https://github.com"]
-	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = Anthony Oteri
+	email = anthony.oteri@edgeware.tv
+	signingkey = D06EC44188FCFE5F
+
 
 # vim: set commentstring=#\ %s:
