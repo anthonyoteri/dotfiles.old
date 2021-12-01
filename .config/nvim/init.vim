@@ -1,17 +1,3 @@
-"                                    ________
-"                                  |\\#######\
-"                                  |#\\#######\
-"                                  |##\\#######\
-"                                  |###\\#######\
-"                                  #####\\#######\
-"                         _______,#######|\#######\
-"                         \W############W  \#######\
-"                          \W##########W    \#######\
-"                           '#########'      \#######\
-"                              ¯¯¯¯¯          ¯¯¯¯¯¯¯¯
-"
-"       Personal vim configuration of Jess Archer <jess@jessarcher.com>
-
 "--------------------------------------------------------------------------
 " General settings
 "--------------------------------------------------------------------------
@@ -45,6 +31,8 @@ set backup
 set backupdir=~/.local/share/nvim/backup//
 set updatetime=300 " Reduce time for highlighting other references
 set redrawtime=10000 " Allow more time for loading syntax on large files
+set cc=80
+set cursorline
 
 "--------------------------------------------------------------------------
 " Key maps
