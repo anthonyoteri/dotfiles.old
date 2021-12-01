@@ -1,0 +1,10 @@
+{
+    "explorer.confirmDelete": false,
+    "redhat.telemetry.enabled": true,
+    "editor.fontFamily": "'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 18,
+    "workbench.colorTheme": "Dracula",
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "editor.codeLensFontFamily": "'FiraCode Nerd Font'",
+    "editor.smoothScrolling": true
+}
