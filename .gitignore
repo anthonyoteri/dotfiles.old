@@ -12,12 +12,11 @@
 
 # Vim
 .vim/.netrwhist
-.vim/backup/
-.vim/pack/
-.vim/spell/
-.vim/swap/
+.vim/autoload/plug.vim
+.vim/backups/*
+.vim/swaps/*
 .vim/tags/
-.vim/undo/
+.vim/undo/*
 
 # Zsh
 .config/zsh/cache/
