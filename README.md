@@ -32,3 +32,12 @@ Note: The above command may fail with a message about untracked files being over
 config config --local status.showUntrackedFiles no
 ~~~
 
+## Post installation tasks
+
+### Configuring NeoVIM
+
+~~~ bash
+pacman -S neovim-plug
+pip install neovim jade
+vim + PlugInstall +PlugClean +gq
+~~~
