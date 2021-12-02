@@ -6,10 +6,11 @@ alias docker-run=$HOME/workspace/monorepo/docker.sh
 
 set -x PIP_INDEX_URL https://pypi.edgeware.tv/simple/ 
 
-set -x MONOREPO_ROOT ~/workspace/monorepo
+set -x MONOREPO_ROOT $HOME/workspace/monorepo
 set -x AWS_PROFILE streampilot-dev
+
 set -x ENVIRONMENT dev
-set -x CLUSTER_NAME orc-dev-a
+set -x CLUSTER_NAME orc-dev-b
 set -x NAMESPACE anthony
-set -x PUBLIC_URL http://localhost:8080/
-set -x REACT_APP_BASE_URL http://localhost:8000/a1/v1
+#set -x PUBLIC_URL http://localhost:8080/
+#set -x REACT_APP_BASE_URL http://localhost:8000/a1/v1
