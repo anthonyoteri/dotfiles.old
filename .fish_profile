@@ -12,5 +12,3 @@ set -x AWS_PROFILE streampilot-dev
 set -x ENVIRONMENT dev
 set -x CLUSTER_NAME orc-dev-b
 set -x NAMESPACE anthony
-#set -x PUBLIC_URL http://localhost:8080/
-#set -x REACT_APP_BASE_URL http://localhost:8000/a1/v1
