@@ -2,6 +2,9 @@ set -gx GPG_TTY (tty)
 
 alias vim=/usr/bin/nvim
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias docker-run=$HOME/workspace/monorepo/docker.sh
+
+set -x PIP_INDEX_URL https://pypi.edgeware.tv/simple/ 
 
 set -x MONOREPO_ROOT ~/workspace/monorepo
 set -x AWS_PROFILE streampilot-dev
