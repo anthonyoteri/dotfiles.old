@@ -21,3 +21,7 @@
 # Zsh
 .config/zsh/cache/
 .zsh_history
+
+# Tmux
+.tmux/
+
