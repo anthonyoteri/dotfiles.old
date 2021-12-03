@@ -18,7 +18,6 @@ set smartcase
 set wildmode=longest:full,full
 set nowrap
 set list
-set listchars=tab:▸\ ,trail:·
 set mouse=a
 set scrolloff=8
 set sidescrolloff=8
@@ -128,6 +127,7 @@ source ~/.config/nvim/plugins/quickscope.vim
 source ~/.config/nvim/plugins/repeat.vim
 source ~/.config/nvim/plugins/rooter.vim
 source ~/.config/nvim/plugins/sayonara.vim
+source ~/.config/nvim/plugins/sensible.vim
 source ~/.config/nvim/plugins/smooth-scroll.vim
 source ~/.config/nvim/plugins/splitjoin.vim
 source ~/.config/nvim/plugins/surround.vim
