@@ -44,7 +44,8 @@
 
     r = rebase
 	ri = rebase --interactive
-	
+    rim = rebase --interactive origin/master
+
 	s = status --short --branch
 
 	branch-list-merged = "!git branch --merged master | grep -v -E '(origin|master)'"
