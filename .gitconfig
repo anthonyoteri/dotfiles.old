@@ -40,6 +40,7 @@
 
     p = push
 	pf = push --force 
+	puh = push -u origin HEAD
 
     r = rebase
 	ri = rebase --interactive
