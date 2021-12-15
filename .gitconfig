@@ -13,9 +13,13 @@
 
 	c = commit
 	ca = commit --amend
+	cas = commit --amend --signoff
 	ci = commit --interactive
+	cis = commit --amend --signoff
 	cm = commit --message
+	cms = commit --signoff --message
 	cv = commit --verbose
+	cvs = commit --verbose --signoff
 
 	d = diff
 	dc = diff --cached
