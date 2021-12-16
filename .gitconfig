@@ -12,6 +12,7 @@
 	bM = branch --move --force
 
 	c = commit
+	cs = commit --signoff
 	ca = commit --amend
 	cas = commit --amend --signoff
 	ci = commit --interactive
