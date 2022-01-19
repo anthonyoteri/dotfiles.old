@@ -8,9 +8,9 @@ alias docker-run=$HOME/workspace/monorepo/docker.sh
 #set -x PIP_INDEX_URL https://pypi.edgeware.tv/simple/ 
 set -x MONOREPO_ROOT $HOME/workspace/monorepo
 set -x AWS_PROFILE streampilot-dev
-set -x ENVIRONMENT dev
-set -x CLUSTER_NAME orc-dev-b
-set -x NAMESPACE anthony
 
 # Faster Docker Builds
 set -x DOCKER_BUILDKIT 1
+
+# Local Kubernetes Alias
+alias k='kubectl --kubeconfig $HOME/.kube/config-k3s'
